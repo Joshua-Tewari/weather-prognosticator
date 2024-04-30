@@ -1,0 +1,81 @@
+city,temperature,description,icon
+Modinagar,29.3,few clouds,02n
+
+day,min_temp,max_temp,description,icon
+Tuesday,25.84,38.12,scattered clouds,03d
+Wednesday,25.4,39.48,clear sky,01d
+Thursday,26.74,41.01,scattered clouds,03d
+Friday,27.99,41.37,few clouds,02d
+Saturday,28.71,40.27,scattered clouds,03d
+city,temperature,description,icon
+Haryana,29.82,clear sky,01n
+
+day,min_temp,max_temp,description,icon
+Tuesday,26.15,37.86,scattered clouds,03d
+Wednesday,25.89,38.75,clear sky,01d
+Thursday,27.22,40.88,broken clouds,04d
+Friday,28.76,40.64,clear sky,01d
+Saturday,29.49,38.46,clear sky,01d
+city,temperature,description,icon
+New Delhi,24.09,haze,50n
+
+day,min_temp,max_temp,description,icon
+Tuesday,24.09,37.98,few clouds,02d
+Wednesday,28.25,39.19,clear sky,01d
+Thursday,30.08,40.84,scattered clouds,03d
+Friday,30.8,41.15,scattered clouds,03d
+Saturday,31.05,39.67,few clouds,02d
+city,temperature,description,icon
+Haryana,29.82,clear sky,01n
+
+day,min_temp,max_temp,description,icon
+Tuesday,26.15,37.86,scattered clouds,03d
+Wednesday,25.89,38.75,clear sky,01d
+Thursday,27.22,40.88,broken clouds,04d
+Friday,28.76,40.64,clear sky,01d
+Saturday,29.49,38.46,clear sky,01d
+city,temperature,description,icon
+Agra,40.82,scattered clouds,03d
+
+day,min_temp,max_temp,description,icon
+Monday,29.0,41.41,scattered clouds,03d
+Tuesday,26.21,39.26,clear sky,01d
+Wednesday,25.35,38.41,clear sky,01d
+Thursday,25.15,38.3,clear sky,01d
+Friday,26.23,40.46,scattered clouds,03d
+city,temperature,description,icon
+Chennai,34.45,few clouds,02d
+
+day,min_temp,max_temp,description,icon
+Monday,27.96,34.45,few clouds,02d
+Tuesday,27.55,34.72,overcast clouds,04d
+Wednesday,28.87,35.68,few clouds,02d
+Thursday,29.36,35.54,broken clouds,04d
+Friday,29.77,35.18,overcast clouds,04d
+city,temperature,description,icon
+New Delhi,36.09,haze,50d
+
+day,min_temp,max_temp,description,icon
+Monday,30.48,39.51,few clouds,02d
+Tuesday,27.77,37.92,clear sky,01d
+Wednesday,27.41,35.58,clear sky,01d
+Thursday,27.03,38.25,clear sky,01d
+Friday,29.83,39.76,broken clouds,04d
+city,temperature,description,icon
+kanpur,41.67,overcast clouds,04d
+
+day,min_temp,max_temp,description,icon
+Monday,28.5,42.32,overcast clouds,04d
+Tuesday,29.45,41.1,clear sky,01d
+Wednesday,26.02,40.97,clear sky,01d
+Thursday,23.91,39.01,clear sky,01d
+Friday,25.59,42.56,clear sky,01d
+city,temperature,description,icon
+allahabad,42.93,clear sky,01d
+
+day,min_temp,max_temp,description,icon
+Monday,29.19,43.49,few clouds,02d
+Tuesday,31.31,42.57,clear sky,01d
+Wednesday,27.59,41.99,clear sky,01d
+Thursday,25.17,40.42,clear sky,01d
+Friday,26.44,42.72,clear sky,01d

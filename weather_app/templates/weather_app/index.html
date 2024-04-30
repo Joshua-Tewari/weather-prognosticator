@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prognosticator</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="city" placeholder="Enter city">
+  <button type="submit">Predict Weather</button>
+</form>
+
+<div class="comparison-container">
+  {% if weather_data %}
+    <div class="city-container">
+      {% include 'weather_app/city_weather.html' with weather_data=weather_data daily_forecasts=daily_forecasts %}
+    </div>
+  {% endif %}
+</div>
+
+</body>
+</html>
