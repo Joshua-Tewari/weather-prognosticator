@@ -1,11 +1,9 @@
-# views.py
-
 from django.shortcuts import render
 import csv
 import requests
 import datetime
 import numpy as np
-from sklearn.ensemble import GradientBoostingRegressor  # Updated import
+from sklearn.ensemble import GradientBoostingRegressor  
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
@@ -17,13 +15,13 @@ def index(request):
     if request.method == 'POST':
         city = request.POST['city']
 
-        # Fetch current weather data and forecast from OpenWeatherMap API
+        
         weather_data, daily_forecasts = fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
 
-        # Train machine learning model from the stored file
+        
         model = train_model_from_file()
 
-        # Make predictions for the next five days
+        
         next_five_days_forecast = predict_next_five_days(model)
 
         context = {
@@ -42,7 +40,7 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
     lat, lon = response['coord']['lat'], response['coord']['lon']
     forecast_response = requests.get(forecast_url.format(lat, lon, api_key)).json()
 
-    # Store the weather data in the CSV file
+    
     with open('weather_data.csv', 'a', newline='') as csv_file:  # Open in append mode
         writer = csv.writer(csv_file)
         writer.writerow(['city', 'temperature', 'description', 'icon'])
@@ -60,7 +58,7 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
                              daily_data['weather'][0]['description'],
                              daily_data['weather'][0]['icon']])
 
-    # Extract and return current weather data and daily forecasts
+    
     weather_data = {
         'city': city,
         'temperature': round(response['main']['temp'] - 273.15, 2),
@@ -82,21 +80,19 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
 
 
 def preprocess_weather_data(weather_data):
-    # Preprocess weather data to prepare for training
-    # Example: Extract relevant features, handle missing values, encode categorical variables
-    # For demonstration, we'll use temperature as the feature
+    
     X = np.array([weather_data['temperature']]).reshape(-1, 1)
     y = np.array([weather_data['temperature']])  # Target variable (temperature)
     return X, y
 
 
 def train_model_from_file():
-    # Load weather data from the CSV file
+    
     with open('weather_data.csv', 'r', newline='') as csv_file:
         reader = csv.reader(csv_file)
         data = list(reader)
 
-    # Extract current weather data from the CSV data
+    
     current_weather = {
         'city': data[1][0],
         'temperature': float(data[1][1]),
@@ -104,10 +100,10 @@ def train_model_from_file():
         'icon': data[1][3],
     }
 
-    # Extract forecast data from the CSV data
+    
     forecast_data = data[4:]
 
-    # Train machine learning model
+    
     X_train, y_train = preprocess_weather_data(current_weather)
     model = GradientBoostingRegressor()  # Use Gradient Boosting Regressor
     model.fit(X_train, y_train)
@@ -115,14 +111,11 @@ def train_model_from_file():
 
 
 def predict_next_five_days(model):
-    # Generate predictions for the next five days using the trained model
-    # For demonstration, we'll predict temperatures for each day
     next_five_days_forecast = []
     for i in range(1, 6):
-        # Example: Predict temperature for day i
-        predicted_temp = model.predict(np.array([[i]]))  # Input feature: day number
+        predicted_temp = model.predict(np.array([[i]])) 
         next_five_days_forecast.append({
             'day': (datetime.datetime.now() + datetime.timedelta(days=i)).strftime('%A'),
-            'temperature': round(predicted_temp[0], 2),  # Predicted temperature
+            'temperature': round(predicted_temp[0], 2),  
         })
     return next_five_days_forecast
